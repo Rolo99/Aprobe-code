@@ -17,7 +17,7 @@ app.config(['$routeProvider', function($routeProvider) {
 	$routeProvider.otherwise({redirectTo:'/login'});
 }]);
 
-/*
+
 //Remove access to home page without autentication
 app.run(function($rootScope,$location,loginService){
 	var routespermission=['/home']; //Route that require login
@@ -40,7 +40,7 @@ app.run(function($rootScope,$location,loginService){
 		}
 
 	});
-});*/
+});
 
 
  
