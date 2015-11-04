@@ -13,6 +13,7 @@ app.factory('loginService',function($http,$location	,sessionService){
 				else 
 				{
 					//error i password
+					console.log(uid);
 					$location.path('/login');
 				}
 			});

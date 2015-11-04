@@ -1,0 +1,20 @@
+	<h1>Becas template</h1>
+	<table class="table">
+			<thead>
+				<tr>
+					<th>Apellido 1</th>
+					<th>Apellido 2</th>
+					<th>Apellido 3</th>
+					<th>Condici&oacute;n</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<th><input class="form-control" ng-model=""/></th>
+					<th><button class="btn btn-primary">Buscar</button></th>
+				</tr>
+				<tr ng-repeat="estudiante in estudiantes">
+					<th>{{estudiante}}</th>
+				</tr>
+			</tbody>
+	</table>
