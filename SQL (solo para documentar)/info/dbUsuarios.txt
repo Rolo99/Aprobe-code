@@ -1,0 +1,86 @@
+/*
+Lista:
+	Tablas: ComiteBecas,Administrador
+	SP: insertarComiteBecas,
+
+		 insertarAdmin
+*/
+
+
+
+
+/*Tables*/
+
+CREAtE table ComiteBecas(
+	ced int(20) not null primary key,
+	pass  varchar(100) NOT NULL
+)
+
+CREATE TABLE Administrador(
+	ced INT NOT NULL PRIMARY KEY,
+	pass VARCHAR(100) Not null
+)
+
+
+
+
+/*SP*/
+/********************************************************/
+/*insertarComiteBecas_SP inserta un usuario ComiteBecas a la tabla */
+
+DROP PROCEDURE IF EXISTS insertarComiteBecas_SP;
+DELIMITER$$
+
+CREATE PROCEDURE insertarComiteBecas_SP(IN ced1 INT(20), IN pass1 VARCHAR(100))
+BEGIN
+
+	INSERT INTO ComiteBecas (`ced`,`pass`) VALUES(ced1,pass1);
+
+END; $$
+DELIMITER ;
+
+/*Ejemplo*/
+CALL insertarComiteBecas_SP(2,"1234");
+/********************************************************/
+/*consultar usuarios comitesDeBeca*/
+
+DROP PROCEDURE IF EXISTS consultarComiteBecas_SP;
+DELIMITER$$
+
+CREATE PROCEDURE consultarComiteBecas_SP(IN cedula INT(20))
+BEGIN
+	SELECT `pass` FROM `ComiteBecas`
+	WHERE `ComiteBecas`.`ced` = cedula;
+END; $$
+DELIMITER ;
+
+
+
+/********************************************************/
+/*insertarComiteBecas_SP inserta un usuario Administrador a la tabla*/
+
+DROP PROCEDURE IF EXISTS insertarAdmin_SP;
+DELIMITER$$
+
+CREATE PROCEDURE insertarAdmin_SP(IN ced1 INT(20), IN pass1 VARCHAR(100))
+BEGIN
+
+	INSERT INTO Administrador (`ced`,`pass`) VALUES(ced1,pass1);
+
+END; $$
+DELIMITER ;
+
+/********************************************************/
+/*Consultar admin*/
+DROP PROCEDURE IF EXISTS consultarAdmin_SP;
+DELIMITER$$
+
+CREATE PROCEDURE consultarAdmin_SP(IN cedula INT(20))
+BEGIN
+	SELECT `pass` FROM `Administrador`
+	WHERE Administrador.`ced` = cedula;
+END; $$
+DELIMITER ;
+
+
+/********************************************************/
