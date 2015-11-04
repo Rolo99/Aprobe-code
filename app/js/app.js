@@ -4,7 +4,7 @@ var app = angular.module('myApp', ['ngRoute']);
 app.config(['$routeProvider', function($routeProvider) {
 	$routeProvider.when('/login',{
 		templateUrl:'partials/login.html',
-		controller: 'loginCtrl'
+		controller: 'loginAdminCtrl'
 	});
 	$routeProvider.when('/home',{
 		templateUrl: 'partials/home.html',

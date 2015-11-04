@@ -7,11 +7,11 @@ app.controller('loginCtrl',['$scope','loginService',function ($scope,loginServic
 }]);
 
 
-app.controller('loginAdminCtrl',['$scope','loginService',function(){
+app.controller('loginAdminCtrl',['$scope','loginService',function ($scope,$loginService){
 	$scope.msgtxt = '';
 	$scope.login = function(user)
 	{
-		loginService.loginService(user,$scope);
+		loginService.login(user,$scope);
 	}
 }]);
 
